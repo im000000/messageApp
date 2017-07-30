@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+
+  <!-- This property is not necessary, but makes the results in the IDE easier to view
+       because VisualStudio does not show the expanded value -->
+
+  <PropertyGroup>
+  	<GtestDir>$(MSBuildThisFileDirectory)</GtestDir>
+  </PropertyGroup> 
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(GtestDir)include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);$(GtestDir)lib\$(Platform)\$(Configuration)\gtest_md.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup> 
+
+</Project>
